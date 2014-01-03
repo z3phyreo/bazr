@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Listings </h1>
+
+<ul>
+    {% for listing in object_list %}
+        <li class='listing'>{{ listing }}</li>
+            <ul>
+                <li> {{ listing.title }}</li>
+                <li> {{ listing.seller }} </li>
+                <li> {{ listing.listing_type }} </li>
+            </ul>
+    {% endfor %}
+</ul>
+
+{% endblock %}
