@@ -11,8 +11,10 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^', include('market.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/$', 'django.contrib.auth.views.login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout'),
+    url(r'^login/', 'django.contrib.auth.views.login', name='login'),
+    url(r'^logout/', 'django.contrib.auth.views.logout', name='logout'),
+    url(r'^user/', include('registration.backends.default.urls'), name='user'),
+    url(r'^foundation/', include('foundation.urls')),
 )
 
 urlpatterns +=staticfiles_urlpatterns()

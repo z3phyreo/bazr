@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Add Listing </h1>
+
+<form action="{% url "listing-new" %}" method="POST">
+    {% csrf_token %}
+    <ul>
+        {{ form.as_ul }}
+    </ul>
+    <input id="save_listing" type="submit" value="Save" />
+</form>
+
+<a href="{% url "listings" %}"> back to list </a>
+
+{% endblock %}

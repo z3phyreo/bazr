@@ -1,26 +1,30 @@
 {% extends "base.html" %}
 
+{% block title %}Log in{% endblock %}
+
 {% block content %}
 
+<h1>Log in</h1>
+
 {% if form.errors %}
-<p> Your username and password didn't match. Please try again </p>
+<p class="error">Please correct the errors below:</p>
 {% endif %}
 
-<form method="POST" action="{% url 'django.contrib.auth.views.login' %}">
-{% csrf_token %}
-<tabel>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.lable_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
+<form method="post" action="?next={{ next|default:"/" }}">{% csrf_token %}
+<dl>
+<dt><label for="id_username">Username:</label>{% if form.username.errors %} <span class="error">{{ form.username.errors|join:", " }}</span>{% endif %}</dt>
+<dd>{{ form.username }}</dd>
+<dt><label for="id_password">Password:</label>{% if form.password.errors %} <span class="error">{{ form.password.errors|join:", " }}</span>{% endif %}</dt>
+<dd>{{ form.password }}</dd>
+<dt><input type="submit" value="Log in" /></dt>
+</dl>
 </form>
 
+
+
+  {% endblock %}
+
+{% block content-related %}
+<p>If you don't have an account, you can <a href="/accounts/register/">sign
+up</a> for one.
 {% endblock %}
