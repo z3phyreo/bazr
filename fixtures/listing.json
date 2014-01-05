@@ -1,0 +1,38 @@
+[
+  {
+    "model": "market.Listing",
+    "pk": 1,
+    "fields": {
+      "seller": 1,
+      "title": "Raspberry Pi Rev.B 512MB",
+      "slug": "raspberry_pi_rev_b_512mb",
+      "listing_type": "ac",
+      "pub_date": "2014-01-05 18:08:32",
+      "description": "Raspberry Pi is great!"
+    }
+  },
+  {
+    "model": "market.Listing",
+    "pk": 2,
+    "fields": {
+      "seller": 2,
+      "title": "Beaglebone Black 1 GHz",
+      "slug": "beaglebone_black_1_ghz",
+      "listing_type": "ac",
+      "pub_date": "2014-01-04 16:28:12",
+      "description": "BBB is great!"
+    }
+  },
+  {
+    "model": "market.Listing",
+    "pk": 3,
+    "fields": {
+      "seller": 2,
+      "title": "Tesla Model S",
+      "slug": "tesla_model_s",
+      "listing_type": "bin",
+      "pub_date": "2014-01-02 11:08:22",
+      "description": "Tesla Model S for sale!"
+    }
+  }
+]
